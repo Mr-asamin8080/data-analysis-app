@@ -9,10 +9,6 @@ services:
         - 9200:9200
     expose:
         - 9300
-    #ulimits:
-        #nofile:
-           #soft: 65536
-           #hard: 65536
   kibana:
     build: kibana
     links:
@@ -28,4 +24,3 @@ services:
       - "5000:5000"
     volumes:
       - "./flask/src:/home/src"
-    tty: true

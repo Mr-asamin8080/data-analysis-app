@@ -6,6 +6,10 @@ ENV TZ Asia/Tokyo
 ENV WORK_DIR=/home/src
 
 RUN mkdir $WORK_DIR
+WORKDIR $WORK_DIR
+COPY ./src/app.py $WORK_DIR
 
 RUN pip install elasticsearch
 RUN pip install flask
+
+CMD ["python", "app.py"]
